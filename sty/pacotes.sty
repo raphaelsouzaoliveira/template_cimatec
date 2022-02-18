@@ -1,0 +1,339 @@
+\usepackage[utf8]{inputenc}		
+\usepackage{lastpage}         
+\usepackage{indentfirst}		  
+\usepackage{listings}
+\usepackage{color}		  
+\usepackage{graphicx}			    
+\usepackage{microtype} 			  
+\usepackage{supertabular} 
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{adjustbox}
+\usepackage{amssymb,amsmath,mathrsfs}
+%\usepackage[portugues,ruled,lined]{algorithm2e}
+%\usepackage{algorithmic}
+\usepackage{algorithm,algpseudocode}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{lipsum}	
+\usepackage{titlesec}
+\usepackage{subfigure}
+\usepackage{array, booktabs, ragged2e}	                  
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage[brazilian,hyperpageref]{backref}	 
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
+\usepackage[normalem]{ulem}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+%\usepackage{yaacro}
+%\usepackage[none]{verlab}
+%\usepackage{lscape}
+%\usepackage[graphicx]{realboxes}
+%\usepackage{rotating}
+
+\usepackage{cmap}             
+%\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{float}
+
+\usepackage[refpage]{nomencl}
+\usepackage{nomencl}
+
+%\DeclareUnicodeCharacter{00A0}{ } 
+\usepackage{lipsum}	
+
+%\begin{tabular}{p{3cm} p{4cm} p{2cm} p{5.3cm}}
+%\newcommand{\tcolone}{4cm}
+%\newcommand{\tcoltwo}{2.5cm}
+%\newcommand{\tcolthree}{2.5cm}
+%\newcommand{\tcolfour}{5.2cm}
+%\newcommand{\tcolmerge}{11.02cm}
+
+
+\renewcommand{\backrefpagesname}{}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{}%
+
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm} 
+\newcommand{\english}[1]{\emph{\foreignlanguage{english}{#1}}}
+\newcommand{\french}[1]{\emph{\foreignlanguage{french}{#1}}}
+
+%\def \mcti{ SENAI-CIMATEC Programa de Pós Graduação em Modelagem Computacional e Tecnologia Industrial }
+%\def \mctisite{http://www.senaicimatec.com.br/cursos_pos_stricto/mestrado-academico-mcti/}
+%\def \reporttitle{Modelagem UML aplicada a Redes Sociais e Complexas utilizando metodologia PBL }
+\makeindex
+
+\setulmarginsandblock{2.5cm}{1.25cm}{*}
+\setlrmarginsandblock{2cm}{2.5cm}{*}
+\checkandfixthelayout
+
+\setlength{\headsep}{1.5cm}
+
+\usepackage{fontspec}
+\setmainfont[Path=./fonts/,
+    BoldItalicFont=calibriz.ttf,
+    BoldFont      =calibrib.ttf,
+    ItalicFont    =calibrii.ttf]{calibri.ttf}  % Fonte Calibri
+
+
+%\makepagestyle{pagestyle_cpai}
+%\makeoddhead{pagestyle_cpai}{}{}{\sffamily\color{black!60} \thepage\ }
+
+%\makeoddfoot{pagestyle_cpai}
+%{
+%  \sffamily\color{black!60}\tiny\SingleSpacing  \mcti \\ [-0.4cm]
+%  \sffamily\color{black!60}\tiny\SingleSpacing \reporttitle }{}
+%  {} 
+%%\makefootrule{pagestyle_cpai}{\textwidth}{\normalrulethickness}{-0.6cm}
+
+%\let\oldtextual\textual
+%\renewcommand{\textual}{%
+%  \oldtextual%
+%  \pagestyle{pagestyle_cpai}%
+%  \aliaspagestyle{chapter}{pagestyle_cpai}}
+
+%\let\oldpostextual\postextual
+%\renewcommand{\postextual}{%
+%  \oldpostextual%
+%  \pagestyle{pagestyle_cpai}%
+%  \aliaspagestyle{chapter}{pagestyle_cpai}}
+
+  
+%\renewcommand{\imprimircapa}{
+%  \begin{capa}   
+%  	\begin{flushleft}
+%	  	\vspace*{-2em}
+%	  	\center
+%	 	\includegraphics[scale=0.22]{images/brasao.png} \\
+%		\vspace*{2em}
+%  \end{flushleft}
+%    \centering
+%    \vspace*{1cm}
+%    {\ABNTEXchapterfont\large\imprimirautor}
+%    \vspace*{\fill}
+%    
+%    {\ABNTEXchapterfont\bfseries \large \imprimirtitulo}
+%    \vspace*{\fill} 
+%    
+%    {\large\imprimirlocal}  \\
+%    {\large\imprimirdata}
+%    \vspace*{1cm}
+%  \end{capa}
+%}
+
+%\renewenvironment{folhaderosto}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
+%\renewenvironment{folhaderosto*}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
+
+\makeatletter
+
+\newcommand{\printpageone}{
+  \begin{capa}   
+  	\begin{flushleft}
+	  	%\vspace*{-2em}
+	  	\center
+	  	%\medskip
+	 	\includegraphics[scale=0.48]{images/brasao.png} \\
+	 	\large{CENTRO UNIVERSITÁRIO SENAI CIMATEC}\\
+        \large{PROGRAMA DE PÓS-GRADUAÇÃO STRICTO SENSU}\\
+        \large{MODELAGEM COMPUTACIONAL E TECNOLOGIA INDUSTRIAL}
+  \end{flushleft}
+  
+    \centering
+    \vspace*{4cm}
+    {\Large\imprimirautor}
+    \vspace*{3cm}
+    
+    {\Large\textbf{\imprimirtitulo}}\\
+    
+    \vspace*{4cm}
+    
+    {\large{Dissertação de Mestrado}}\\
+    
+    \vspace*{3cm}
+    
+    {\large\imprimirlocal}, {\large\imprimirdata}
+    \vspace*{2cm}
+  \end{capa}
+}
+
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+    {\ABNTEXchapterfont\large\imprimirautor}
+
+    \vspace*{\fill}
+   {\ABNTEXchapterfont\bfseries\large\imprimirtitulo}
+    \vspace*{\fill}
+
+    \abntex@ifnotempty{\imprimirpreambulo}{%
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+      	\SingleSpacing
+      	Dissertação apresentada ao Programa de Pós-Graduação Stricto Sensu do Centro Universitário SENAI CIMATEC como requisito parcial para a obtenção do título de Mestre em Modelagem Computacional e Tecnologia Industrial
+      
+        \hfill \break
+        
+        {\imprimirorientadorRotulo~\imprimirorientador\par}
+    \abntex@ifnotempty{\imprimircoorientador}{%
+	{\imprimircoorientadorRotulo~\imprimircoorientador}%
+    %\vspace*{\fill}
+    }%
+       \end{minipage}%
+       \vspace*{\fill}
+    }%
+    {\large\imprimirlocal} \\
+    {\large\imprimirdata}
+    %\vspace*{1cm}
+  \end{center}
+}
+
+\newcommand{\resumoatitlename}[1][RESUMO]{#1}
+
+  
+%----------------
+
+% Margens - NBR 14724/2011 - 5.1 Formato
+
+%\setlrmarginsandblock{3cm}{2cm}{*}
+%\setulmarginsandblock{3cm}{2cm}{*}
+%\checkandfixthelayout
+
+% Espacamento entre linhas - NBR 14724/2011 - 5.2 Espacamento
+\OnehalfSpacing
+
+\providecommand{\ABNTEXisarticle}{false}
+\DeclareOption{article}{
+	\renewcommand{\ABNTEXisarticle}{true}
+	\PassOptionsToClass{article}{memoir}%}
+}
+\providecommand{\ABNTEXistwocolumn}{false}
+\DeclareOption{twocolumn}{
+	\renewcommand{\ABNTEXistwocolumn}{true}
+	\PassOptionsToClass{twocolumn}{memoir}%}
+}
+	
+\DeclareOption*{%
+  \PassOptionsToClass{\CurrentOption}{memoir}%
+}
+\ProcessOptions\relax
+
+
+\renewcommand{\ABNTEXfontereduzida}{\footnotesize}
+
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\Large}
+\renewcommand{\ABNTEXsectionfont}{}
+\renewcommand{\ABNTEXsectionfontsize}{\large}
+\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsectionfontsize}{\large}
+
+\renewcommand{\ABNTEXsubsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+\renewcommand{\ABNTEXpartfont}{}
+\renewcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
+\makeatletter
+\renewcommand\@makefntext[1]{\hangindent=1.2em\leftskip=0.4em\hskip-0.4em\@makefnmark\hskip1.2em\relax#1}
+\makeatother
+\renewcommand{\foottextfont}{\ABNTEXfontereduzida}
+
+\let\oldFootnote\footnote
+\newcommand\nextToken\relax
+\renewcommand\footnote[1]{%
+    \oldFootnote{#1}\futurelet\nextToken\isFootnote}
+\newcommand\isFootnote{%
+    \ifx\footnote\nextToken\textsuperscript{,}\fi}
+
+\setlength{\skip\footins}{2cm}
+
+\makeatletter
+\@removefromreset{footnote}{chapter}
+\makeatother
+
+% Estilos de caption
+\captiondelim{\space--\space}
+\captionnamefont{\ABNTEXfontereduzida}
+\captiontitlefont{\ABNTEXfontereduzida}
+
+% Configuracoes do TOC
+% nivel de profundidade
+\setsecnumdepth{subsubsection}
+\settocdepth{subsubsection}  
+
+\renewcommand{\tocheadstart}{\large}
+
+% ABNT NBR 14724-2011 - 5.2.2-5.2.4; ABNT NBR 6024-2003 - 3.1-3.8
+\provideboolean{abntex@innonumchapter}
+\setboolean{abntex@innonumchapter}{true}
+%--------
+
+\makechapterstyle{abnt}{
+
+  \newlength{\chapternamenumlength}
+
+  % tamanhos de fontes de chapter e part	
+   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
+     \setlength\beforechapskip{\baselineskip}
+     \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\bfseries\ABNTEXsectionfontsize}
+   }{%else
+     \setlength{\beforechapskip}{0pt}
+     \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}
+   }
+   
+  \renewcommand{\chapnumfont}{\chaptitlefont}
+  \renewcommand{\parttitlefont}{\ABNTEXpartfont\bfseries\ABNTEXpartfontsize}
+  \renewcommand{\partnumfont}{\ABNTEXpartfont\bfseries\ABNTEXpartfontsize}
+  \renewcommand{\partnamefont}{\ABNTEXpartfont\bfseries\ABNTEXpartfontsize}
+  
+    % tamanhos de fontes de section, subsection e subsubsection
+  \setsecheadstyle{\ABNTEXchapterfont\ABNTEXsectionfontsize}
+  \setsubsecheadstyle{\ABNTEXsubsectionfont\ABNTEXsubsectionfontsize}
+  \setsubsubsecheadstyle{\ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize}
+  
+  % impressao do numero do capitulo
+  \renewcommand{\chapternamenum}{}
+    % impressao do nome do capitulo
+  
+  \renewcommand{\printchaptername}{%
+   \chaptitlefont
+   \ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{}%
+  }
+  
+    % impressao do titulo do capitulo
+  \def\printchaptertitle##1{%
+    \chaptitlefont%
+    \ifthenelse{\boolean{abntex@innonumchapter}}{\centering##1}{% else
+	    \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+	    \parbox[t]{\columnwidth-\chapternamenumlength}{##1}%
+	}    
+  }
+    % impressao do numero do capitulo     	
+  \renewcommand{\printchapternum}{%
+     \setboolean{abntex@innonumchapter}{false}
+     \chapnumfont%
+     \space\thechapter\space%
+     \ifthenelse{\boolean{abntex@apendiceousecao}}{%
+       --\space%
+     }{} % else
+  }
+  
+    
+  % impressao do capitulo nao numerado
+  \renewcommand\printchapternonum{%
+     \setboolean{abntex@innonumchapter}{true}%
+    }
+}
+%\chapterstyle{abnt}
+
+\makepagestyle{abntheadings}
+\makeevenfoot{abntheadings}{}{\thepage}{\ABNTEXfontereduzida\textit\leftmark}
+
+% Cabecalho do inicio do capitulo
+\makepagestyle{abntchapfirst}
+\makeoddfoot{abntchapfirst}{}{\thepage}{}
+
+

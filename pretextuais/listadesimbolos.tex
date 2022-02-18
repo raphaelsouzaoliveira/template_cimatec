@@ -1,0 +1,48 @@
+% ABNT NBR 10719:2015
+% Lista de símbolos
+% Elemento opcional. Elaborada de acordo com a ordem apresentada no texto, com o devido significado.
+% EXEMPLO
+% dab Distância euclidiana
+% O(n) Ordem de um algoritmo
+
+%\makeatletter
+%	\newcommand\criarsimbolo[2]{%
+%		\write\@auxout{\noexpand\@writefile{sbl}{\noexpand\item[#1] #2}}}
+%	\newcommand\imprimirlistadesimbolos{%
+%		\begin{simbolos}
+%			   \@starttoc{sbl}
+%		\end{simbolos}}
+%\makeatother
+%
+%\imprimirlistadesimbolos
+% *****  Definição da Lista de Símbolos  *****
+
+% \simb[entrada na lista de símbolos]{símbolo}: 
+%   Escreve o símbolo no texto e uma entrada na Lista de Símbolos.
+%   Se o parâmetro opcional é omitido, usa-se o parâmetro obrigatório.
+
+\newcommand{\simb}[2][]{%
+   {\addcontentsline{los}{simbolo}{\ensuremath{#2}\hspace{35pt} {#1}}}
+   } 
+\makeatletter
+\newcommand{\listadesimbolos}{
+  \pretextualchapter{Lista de Símbolos}
+  {\setlength{\parindent}{0cm}
+   \@starttoc{los}}}
+
+% como a entrada será impressa
+% \newcommand\l@simbolo[2]{\par #1, p.\thinspace#2} 
+%\newcommand\l@simbolo[2]{\par #1 } 
+%\newcommand\l@simbolo[2]{\normalsize #1 \hspace*{2.5pt}\mydots #2 \par}
+%\newcommand\l@simbolo[2]{\par #1, \hfill p.\thinspace #2} 
+\newcommand\l@simbolo[2]{\par #1 } 
+
+\makeatother
+% ***** fim da Lista de Símbolos *****
+
+\listadesimbolos
+% como usar
+%\simb[Letra Grega]{\theta}
+%\simb[coordenadas cartesianas da trajetória do corpo]{x}
+%\simb[massa em Kg]{m}
+

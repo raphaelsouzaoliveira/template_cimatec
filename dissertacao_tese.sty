@@ -1,0 +1,129 @@
+% Declaracao do pacote de estilos
+\ProvidesPackage{dissertacao_teste}[2022/02/14 AbnTeX]
+
+% Pacote necessario para inclusao do brasao na capa
+\RequirePackage{graphicx}
+
+% Novos comandos para inclusao do departamento e da filiacao
+\providecommand{\imprimirdepartamento}{}
+\newcommand{\departamento}[1]{\renewcommand{\imprimirdepartamento}{#1}}
+
+\providecommand{\imprimirfiliacao}{}
+\newcommand{\filiacao}[1]{\renewcommand{\imprimirfiliacao}{#1}}
+
+\providecommand{\imprimirtipopublicacao}{}
+\newcommand{\tipopublicacao}[1]{\renewcommand{\imprimirtipopublicacao}{#1}}
+
+\providecommand{\imprimirtipoprograma}{}
+\newcommand{\tipoprograma}[1]{\renewcommand{\imprimirtipoprograma}{#1}}
+
+\providecommand{\imprimirtipotitulo}{}
+\newcommand{\tipotitulo}[1]{\renewcommand{\imprimirtipotitulo}{#1}}
+% --
+
+% Novos comandos para legendas de figuras e tabelas
+\newcommand{\fea}{\legend{Fonte: Elaborada pelo autor.}}
+\newcommand{\fbe}[1]{\legend{Fonte: Elaborada pelo autor, baseado em \citeonline{#1}.}}
+\newcommand{\fol}[1]{\legend{Fonte: \citeonline{#1}.}}
+\newcommand{\fdp}{\legend{Fonte: Dados da pesquisa.}}
+
+% Novos comandos para incluir declaração de isenção
+%\providecommand{\imprimirdeclaracaoisencao}{}
+ 
+
+% ----
+% CAPA
+% ----
+\renewcommand{\imprimircapa}{
+	\begin{capa}
+		
+		\center
+
+		\begin{figure}
+        \centering
+        \includegraphics[scale=0.48]{images/brasao.png}
+      	\end{figure}
+		
+		\setlength{\parskip}{0.01cm}
+		\large{\imprimirinstituicao}\par
+		\large {\imprimirfiliacao}\par
+		\imprimirdepartamento\par
+		\setlength{\parskip}{0.2cm}
+				
+		\vspace*{4cm}
+
+		\Large{\imprimirautor}
+		
+		\vspace*{2.5cm}
+		
+		\begin{center}
+		\Large\textbf{\imprimirtitulo}
+		\end{center}
+		
+		\vspace*{4cm}
+		
+		\large{\imprimirtipopublicacao de \imprimirtipoprograma}
+		
+		\vfill
+				
+		\imprimirlocal, \imprimirdata
+		\vspace*{1cm}
+		
+	\end{capa}
+}
+
+% --------------
+% FOLHA DE ROSTO
+% --------------
+
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+    \centering
+ 	
+ 	\large\MakeUppercase\imprimirautor
+    \vspace*{1.5cm}
+    
+    \large\MakeUppercase\imprimirtitulo\par
+    \vspace*{2cm}
+    
+    
+    \justifying
+    \imprimirpreambulo\par
+    \vspace*{2.5cm}
+    
+    \imprimirorientadorRotulo~\imprimirorientador\par
+    \imprimircoorientadorRotulo~\imprimircoorientador\par
+    
+    \vspace*{2.5cm}
+    
+    \center
+    
+    {\imprimirlocal, \imprimirdata}
+  \end{center}
+}
+
+
+% --------------
+% DECLARAÇÃO DE ISENÇÃO
+% --------------
+\renewcommand{\imprimirdeclaracaoisencao}{
+	\begin{center}	
+		\large\textbf{DECLARAÇÃO DE ISENÇÃO DE RESPONSABILIDADE}
+	\end{center}
+	
+	\vspace*{1cm}
+
+	\begin{flushleft}	
+	Através deste Instrumento, isento meu Orientador e a Banca Examinadora de qualquer responsabilidade sobre o aporte ideológico e bases de dados utilizadas conferido ao presente trabalho.
+	\end{flushleft}
+
+	\begin{flushleft}
+	\setlength{\ABNTEXsignwidth}{11cm}
+	\assinatura*{
+		\begin{flushleft}
+			Aluno(a): \\ CPF:
+		\end{flushleft}}
+	\end{flushleft}
+		
+	\cleardoublepage
+}

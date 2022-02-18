@@ -1,0 +1,48 @@
+% ABNT NBR 10719:2015
+% Lista de abreviaturas e siglas
+% Elemento opcional. Consiste na relação alfabética das abreviaturas e siglas utilizadas no relatório, seguidas das palavras ou expressões correspondentes grafadas por extenso. Recomenda-se a elaboração de lista própria para cada tipo.
+% EXEMPLO
+% ABNT Associação Brasileira de Normas Técnicas
+%------------------------------------------------
+\cleardoublepage
+\markboth{\nomname}{\nomname}
+
+\makeatletter 
+\renewcommand{\nomname}{Lista de Siglas}\@starttoc{las}
+%\renewcommand*{\pagedeclaration}[1]{\dotfill \hyperpage{#1}}
+\renewcommand*{\pagedeclaration}[1]{}
+\newcommand{\abreviatura}[2]{\addcontentsline{las}{sig}{\numberline{#1}{#2}}}
+
+\makeatother  
+
+\begin{siglas}
+\item[Adam] \textit{Adaptive Moment Estimation}
+\item[AE] \textit{Autoencoder}
+\item[AG] Algoritmo Genético
+\item[CIG] \textit{Common-image Gather}
+\item[CNN] \textit{Convolutional Neural Network}
+\item[CRF] \textit{Conditional Random Field}
+\item[ELU] \textit{Exponential Linear Unit}
+\item[FCN] \textit{Fully Convolutional Network}
+\item[FWI] \textit{Full Waveform Inversion}
+\item[GPU] \textit{Graphical Processing Unit}
+\item[Leaky ReLU] \textit{Leaky Rectified Linear Unit}
+\item[MAE] \textit{Mean Absolute Error}
+\item[MSE] \textit{Mean Squared Error}
+\item[PCA] \textit{Principal Component Analysis}
+\item[PReLU] \textit{Parametric Rectified Linear Unit}
+\item[PSO] \textit{Particle Swarm Optimization}
+\item[RAM] \textit{Random Access Memory}
+\item[ReLU] \textit{Rectified Linear Unit}
+\item[RTM] \textit{Reverse-Time Migration}
+\item[SGD] \textit{Stochastic Gradient Descent}
+\item[VAE] \textit{Variational Autoencoder}
+
+\end{siglas}
+
+\cleardoublepage
+\makeatletter
+\@mkboth{\MakeUppercase\nomname}{\MakeUppercase\nomname}%
+\makeatother
+  
+\printnomenclature[3cm]

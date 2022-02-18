@@ -1,0 +1,133 @@
+
+\documentclass[
+	12pt,				
+	oneside,
+	a4paper,
+	english,
+	brazil,
+	]{abntex2}
+
+\usepackage{dissertacao_tese} 								% Customizacoes
+
+% Pacotes fundamentais 
+%\usepackage{lmodern}								% Fonte Latin Modern
+\usepackage[T1]{fontenc}							% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}						% Codificacao do documento (acentos)
+\usepackage{lastpage}							% Usado pela Ficha catalografica
+\usepackage{indentfirst}							% Indenta o primeiro paragrafo de cada secao.
+\usepackage{color}								% Controle das cores
+\usepackage{graphicx}							% Inclusao de graficos
+\usepackage{microtype} 							% Melhorias de justificacao
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% Citacoes padrao ABNT
+\usepackage{lipsum}								% Geracao automatica de textos de exemplo
+\usepackage{ragged2e}                           % Fully justified text
+% ---
+	
+% Pacotes de citações
+\usepackage[brazilian,hyperpageref]{backref}	 
+\usepackage[alf]{abntex2cite}					% Citações padrão ABNT
+
+%Define Fonte
+\usepackage{fontspec}
+\setmainfont[Path=./fonts/,
+    BoldItalicFont=calibriz.ttf,
+    BoldFont      =calibrib.ttf,
+    ItalicFont    =calibrii.ttf]{calibri.ttf}  % Fonte Calibri
+    
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{Titulo do trabalho}
+\autor{Nome Completo do Autor}
+\local{Salvador}
+\data{20XX}
+
+\instituicao{CENTRO UNIVERSITÁRIO SENAI CIMATEC}
+\filiacao{PROGRAMA DE PÓS-GRADUAÇÃO STRICTO SENSU}
+\departamento{Modelagem Computacional e Tecnologia Industrial}
+\tipopublicacao{Dissertação}
+\tipoprograma{Mestrado}
+\tipotitulo{Mestre}
+\orientador{Nome Completo do orientador}
+\coorientador{Nome Completo do coorientador}
+
+\preambulo{\imprimirtipopublicacao { apresentada ao Programa de Pós-Graduação Stricto Sensu do Centro Universitário SENAI CIMATEC como requisito parcial para a obtenção do título de} \imprimirtipotitulo { em} \imprimirdepartamento.}
+% ---
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}, 
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.25cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Compila o índice
+\makeindex
+
+
+% Início do documento
+\begin{document}
+
+
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+\imprimircapa
+\imprimirfolhaderosto
+
+\textual
+\include{pretextuais/ficha_catalografica}
+\include{pretextuais/folhaaprovacao}
+\include{pretextuais/dedicatoria}
+\include{pretextuais/agradecimentos}
+\include{pretextuais/resumo}
+\include{pretextuais/abstract}
+\include{pretextuais/listafiguras}
+\include{pretextuais/listadetabelas}
+\include{pretextuais/listadesiglas}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+
+% ------------------
+% ELEMENTOS TEXTUAIS
+% ------------------
+\textual
+
+\include{sections/ch1}
+\include{sections/ch2}
+\include{sections/ch3}
+\include{sections/ch5}
+\include{sections/ch6}
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% Referências bibliográficas
+\bibliography{referencias}
+
+\end{document}

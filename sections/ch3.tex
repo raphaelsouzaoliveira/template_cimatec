@@ -1,0 +1,27 @@
+\chapter{Materiais e Métodos}
+\label{chapther:metodologia}
+
+\textit{\textcolor{red}{Neste capítulo, deve-se descrever qual o método empregado para atingir os objetivos e quais materiais foram necessários.}}
+
+\section{Tópico X}
+\label{section:metodologia_xxx}
+
+\lipsum[1-1]
+
+\subsection{Tópico X Y}
+\label{subsection:metodologia_xxx_yyy}
+
+\lipsum[1-1]
+
+O fator de dois ($fac_2$) na Eq. \ref{eq:fac2} descreve quanto dos valores presentes na estimação realizada pela FCN pode ser considerado como um valor fora do padrão esperado de acordo com o modelo verdadeiro. 
+
+\begin{equation}
+    fac_2 =
+    \begin{cases}
+        1,& 0.5 \leq \frac{\hat{y}_i}{y_i} \leq 2\\
+        0,& \text{senão}
+    \end{cases}
+    \label{eq:fac2}
+\end{equation}
+
+O objetivo é conseguir aproximar as métricas \textit{MSE} e \textit{MAE} o máximo possível de 0 ao passo que as métricas $R^2$, $r$ e $fac_2$ devem estar o mais próximo possível de 1. Em todas as equações descritas anteriormente, os parâmetros $y$ indicam a saída verdadeira, $\overline{y}$ o valor médio da saída verdadeira, $\hat{y}$ a saída estimada e $\overline{\hat{y}}$ o valor médio da saída estimada.
