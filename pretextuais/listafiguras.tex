@@ -1,5 +1,7 @@
 \renewcommand{\listfigurename}{Lista de Figuras}
-	\pdfbookmark[0]{\listfigurename}{lof}
-	\normalsize
-	\listoffigures*
-	\cleardoublepage
+
+\addcontentsline{toc}{chapter}{\listfigurename}
+\pdfbookmark[0]{\listfigurename}{lof}
+\normalsize
+\listoffigures*
+\cleardoublepage

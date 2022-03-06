@@ -1,3 +1,4 @@
+\addcontentsline{toc}{chapter}{\listadesiglasname}
 % ABNT NBR 10719:2015
 % Lista de abreviaturas e siglas
 % Elemento opcional. Consiste na relação alfabética das abreviaturas e siglas utilizadas no relatório, seguidas das palavras ou expressões correspondentes grafadas por extenso. Recomenda-se a elaboração de lista própria para cada tipo.
@@ -5,13 +6,14 @@
 % ABNT Associação Brasileira de Normas Técnicas
 %------------------------------------------------
 \cleardoublepage
-\markboth{\nomname}{\nomname}
+%\markboth{\nomname}{\nomname}
 
 \makeatletter 
-\renewcommand{\nomname}{Lista de Siglas}\@starttoc{las}
+%\renewcommand{\nomname}{Lista de Siglas}\@starttoc{las}
 %\renewcommand*{\pagedeclaration}[1]{\dotfill \hyperpage{#1}}
-\renewcommand*{\pagedeclaration}[1]{}
-\newcommand{\abreviatura}[2]{\addcontentsline{las}{sig}{\numberline{#1}{#2}}}
+%\providecommand{\pagedeclaration}{}
+%\renewcommand*{\pagedeclaration}[1]{}
+%\newcommand{\abreviatura}[2]{\addcontentsline{las}{sig}{\numberline{#1}{#2}}}
 
 \makeatother  
 
@@ -45,4 +47,4 @@
 \@mkboth{\MakeUppercase\nomname}{\MakeUppercase\nomname}%
 \makeatother
   
-\printnomenclature[3cm]
+%\printnomenclature[3cm]
