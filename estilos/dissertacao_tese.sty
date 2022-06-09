@@ -25,6 +25,7 @@
 
 \providecommand{\abstracttitlename}{}
 \renewcommand*\abstracttitlename{Title and Abstract}
+
 % --
 
 % Novos comandos para legendas de figuras e tabelas
@@ -39,6 +40,12 @@
 %Redeficao de comandos do ABNTex2
 \renewcommand{\listadesiglasname}{Lista de Siglas e Abreviaturas}
 \renewcommand{\listfigurename}{Lista de Figuras}
+
+\newcommand{\silentchapter}[1]{
+    \chapter*{#1}
+    \markboth{#1}{#1}
+    \addcontentsline{toc}{chapter}{#1}
+}
 
 % ----
 % CAPA
@@ -136,4 +143,14 @@
 	\end{flushleft}
 		
 	\cleardoublepage
+}
+
+% --------------
+% PRODUÇÃO TÉCNICA E CIENTÍFICA
+% --------------
+\newenvironment{producaotecnicacientifica}{%
+ \begin{appendix}
+}{
+ \end{appendix}
+ \bookmarksetup{startatroot}
 }
